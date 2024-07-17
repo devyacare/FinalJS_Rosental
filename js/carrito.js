@@ -35,7 +35,20 @@ const pintarCarrito = () =>{
             <p>Total: ${product.cantidad * product.precio}</p>
             <span class="delete-product"> X </span>
         `
+        // let carritofooter = documment.createElement ("div")
+        // carritoContent.className = "modal-footer"
+        // carritoContent.innerHTML =`
+        //     <button class="vaciar-carrito" id="vaciar-carrito">Vaciar carrito</button>
+        //     <button class="checkout" id="checkout">Checkout</button>
+        // `
+
+        // <div class="modal-footer">
+        //         <button class="vaciar-carrito" id="vaciar-carrito">Vaciar carrito</button>
+        //         <button class="checkout" id="checkout">Checkout</button>
+        //     </div>
+
         modalContainer.append(carritoContent)
+        // modalContainer.append(carritofooter)
 
         let restar = carritoContent.querySelector(".restar")
         restar.addEventListener("click", () =>{
@@ -63,8 +76,17 @@ const pintarCarrito = () =>{
 
     const totalBuying = document.createElement("div")
     totalBuying.className = "total-content"
-    totalBuying.innerHTML = `Total a pagar: $${total}`
-
+    if (total === 0){ 
+    totalBuying.innerHTML = `El carrito se encuentra vacio`
+    } else{
+        totalBuying.innerHTML = `
+        Total a pagar: $${total}
+        <div class="modal-footer">
+                 <button class="vaciar-carrito" id="vaciar-carrito">Vaciar carrito</button>
+                 <button class="checkout" id="checkout">Checkout</button>
+             </div>
+        `
+    }
     modalContainer.append(totalBuying)
 }
 

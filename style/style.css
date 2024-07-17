@@ -167,6 +167,11 @@ header{
     width: 330px;
 }
 
+.modal-content .modal-footer{
+    display: flex;
+    flex-direction: column;
+}
+
 .modal-container > div > img{
     height: 120px;
     width: 120px;
@@ -199,5 +204,49 @@ header{
 
 .restar{
     cursor: pointer;
+}
+
+.modal-container .total-content .modal-footer .vaciar-carrito{
+    margin-top: 15px;
+    min-width: 130px;
+    height: 40px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    border: 2px solid #cc576a;
+    background: #cc576a;
+}
+
+.modal-container .total-content .modal-footer .vaciar-carrito:hover {
+        background: #fff;
+        color: #cc576a
+}
+
+.modal-container .total-content .modal-footer .checkout{
+    margin-top: 15px;
+    min-width: 130px;
+    height: 40px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    border: 2px solid #57cc88;
+    background: #57cc88;
+}
+
+.modal-container .total-content .modal-footer .checkout:hover {
+        background: #fff;
+        color: #57cc88
 }
 

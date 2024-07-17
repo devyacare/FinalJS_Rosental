@@ -29,7 +29,13 @@ productos.forEach ((product) => {
     if(repeat){
         carrito.map((prod) =>{
             if(prod.id === product.id){
-                prod.cantidad++
+                Toastify({
+                    text: "Este producto ya fue agregado. Si desea agregar cantidades vaya al Carrito",
+                    className: "info",
+                    style: {
+                      background: "linear-gradient(to right, #b0003f, #c93d7b)",
+                    }
+                  }).showToast();
             }
         })
     }else{
@@ -39,7 +45,14 @@ productos.forEach ((product) => {
             nombre: product.nombre,
             precio: product.precio,
             cantidad: product.cantidad,
-        })
+            })
+        Toastify({
+            text: "Producto agregado al carrito",
+            className: "info",
+            style: {
+              background: "linear-gradient(to right, #00b09b, #96c93d)",
+            }
+          }).showToast();
     }
     carritoCounter()
     saveLocal()
