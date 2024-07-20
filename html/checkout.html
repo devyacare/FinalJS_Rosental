@@ -8,9 +8,10 @@
     <!-- TOASTIFY -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <!-- JS -->
-    <script defer src="../js/products.js"></script>   
-    <script defer src="../js/index.js"></script>
-    <script defer src="../js/carrito.js"></script>
+    <script defer src="../js/checkout.js"></script>
+    <!-- <script defer src="../js/products.js"></script>   
+    <script defer src="../js/index.js"></script> 
+    <script defer src="../js/carrito.js"></script>-->
 
     <link rel="shortcut icon" href="../assets/logo.png" type="image/x-icon">
     <title>Econargui Shop Checkout</title>
@@ -29,9 +30,42 @@
         <p>Estos son los productos que elegiste. Más abajo te vamos a pedir algunos datos para el envío.</p>
     </section>
 
-    <div class="resumen-pedido"></div>
+    <div class="resumen-pedido" id="resumen-pedido"></div>
 
-    
+    <form class="form-container">
+        <div class="form-sub1">
+          <div class="item-sub1">
+            <label for="nombre">Nombre: </label>
+            <input type="text"  class="input-bar" name="nombre" id="nombre" placeholder="Escribí tu nombre" required>
+          </div>
+          <div class="item-sub1">
+            <label for="apellido">Apellido: </label>
+            <input type="text"  class="input-bar" name="apellido" id="apellido" placeholder="Escribí tu apellido" required>
+          </div>
+        </div>
+
+        <div class="form-sub2">
+          <div class="item-sub2">
+            <label for="mail">E-Mail: </label>
+            <input type="email" class="input-bar" name="mail" id="mail" placeholder="Escribí tu e-mail" required>
+          </div>                
+          <div class="item-sub2">
+            <label for="celular">Celular / Teléfono: </label>
+            <input type="tel" class="input-bar" name="celular" id="celular" placeholder="Escribí tu celular o teléfono" required>
+          </div>
+        </div>
+
+        <div class="form-sub3">
+            <label for="comentario">Notas: </label>
+            <textarea name="comentario" class="input-bar" id="comentario" placeholder="Si tenes un requerimiento especial para tu pedido hacenoslo saber acá..."></textarea>
+        </div>
+
+        <div class="form-button">
+          <input type="submit" value="CONFIRMAR PEDIDO">
+        </div>
+    </form>
+
+    <div class="recibo-envio" id="recibo-envio"></div>
 
 
 <!-- TOASTIFY -->
