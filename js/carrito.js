@@ -118,6 +118,11 @@ const pintarCarrito = () =>{
         carritoCounter()
     })
 
+    let checkout = totalBuying.querySelector(".checkout")
+    checkout.addEventListener ("click", () =>{
+        window.location = "./html/checkout.html"
+    })
+
     modalContainer.append(totalBuying)
 }
 
