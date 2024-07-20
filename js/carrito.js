@@ -1,3 +1,30 @@
+function actualizarDom (){
+    modalContainer.innerHTML = ""
+    modalContainer.style.display = "flex"
+    const modalHeader = document.createElement("div")
+    modalHeader.className = "modal-header"
+    modalHeader.innerHTML = `
+        <h2 class="modal-header-title">Carrito</h2>
+    `
+    modalContainer.append(modalHeader)
+
+    const modalButton = document.createElement("h2")
+    modalButton.innerText = "X"
+    modalButton.className = "modal-header-button"
+
+    modalButton.addEventListener("click", () =>{
+        modalContainer.style.display = "none"
+    })
+
+    modalHeader.append(modalButton)
+
+    const totalBuying = document.createElement("div")
+    totalBuying.className = "total-content"
+    totalBuying.innerHTML = `El carrito se encuentra vacio`
+
+    modalContainer.append(totalBuying)
+}
+
 const pintarCarrito = () =>{
     modalContainer.innerHTML = ""
     modalContainer.style.display = "flex"
@@ -75,6 +102,12 @@ const pintarCarrito = () =>{
              </div>
         `
     }
+
+    let vaciarCarrito = totalBuying.querySelector(".vaciar-carrito")
+    vaciarCarrito.addEventListener ("click", () =>{
+        localStorage.clear()
+        actualizarDom()
+    })
 
     modalContainer.append(totalBuying)
 }
