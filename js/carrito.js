@@ -45,7 +45,14 @@ const pintarCarrito = () =>{
 
     modalHeader.append(modalButton)
 
+    const modalFooter = document.createElement("h3")
+    modalFooter.innerText = `El carrito se encuentra vacio`
+    modalFooter.className = "modalfooter"
+    
+    modalContainer.append(modalFooter)
+
     carrito.forEach((product) =>{
+        modalFooter.innerHTML = ""
         let carritoContent = document.createElement ("div")
         carritoContent.className = "modal-content"
         carritoContent.innerHTML = `
@@ -106,7 +113,9 @@ const pintarCarrito = () =>{
     let vaciarCarrito = totalBuying.querySelector(".vaciar-carrito")
     vaciarCarrito.addEventListener ("click", () =>{
         localStorage.clear()
+        carrito.length = 0
         actualizarDom()
+        carritoCounter()
     })
 
     modalContainer.append(totalBuying)

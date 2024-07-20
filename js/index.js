@@ -32,6 +32,7 @@ productos.forEach ((product) => {
                 Toastify({
                     text: "Este producto ya fue agregado. Si desea agregar cantidades vaya al Carrito",
                     className: "info",
+                    duration: 5000,
                     style: {
                       background: "linear-gradient(to right, #b0003f, #c93d7b)",
                     }
@@ -49,6 +50,7 @@ productos.forEach ((product) => {
         Toastify({
             text: "Producto agregado al carrito",
             className: "info",
+            duration: 1200,
             style: {
               background: "linear-gradient(to right, #00b09b, #96c93d)",
             }

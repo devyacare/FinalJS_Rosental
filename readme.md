@@ -8,10 +8,3 @@ Así en la página principal se elije un producto y antes de confirmar la compra
 cantidades dandole al botón de agregar se muestra una notificación indicando que se dirija al carrito como feedback.
 
 Andrés Rosental.
-
-
-
-    let vaciarCarrito = totalBuying.querySelector(".vaciar-carrito")
-    vaciarCarrito.addEventListener ("click", () =>{
-        localStorage.clear()
-    })
