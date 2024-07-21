@@ -21,18 +21,35 @@
 
     <header>
         <h1>ECONARGUI SHOP CHECKOUT</h1>
-        <div>
-            <a href="../index.html"><img class="home" src="../assets/iconHome.png" alt="volver al inicio"> INICIO</a>   
-        </div>      
+        <a href="../index.html">VOLVER AL INICIO</a>       
     </header>
 
     <section class="info">
         <p>Estos son los productos que elegiste. Más abajo te vamos a pedir algunos datos para el envío.</p>
     </section>
 
-    <div class="resumen-pedido" id="resumen-pedido"></div>
+    <div class="resumen-pedido" id="resumen-pedido">
+      <table id="tabla" border>
+        <thead>
+            <tr>
+                <th>Nombre del producto</td>
+                <th>Precio por unidad</td>
+                <th>Cantidad de unidades</td>
+                <th>Total</td>
+            </tr>
+        </thead>
+
+        <tfoot>
+          <tr>
+              <td  colspan="4" id="costo-compra"></td>
+          </tr>
+      </tfoot>
+
+      </table>
+    </div>
 
     <form class="form-container">
+
         <div class="form-sub1">
           <div class="item-sub1">
             <label for="nombre">Nombre: </label>
@@ -48,7 +65,7 @@
           <div class="item-sub2">
             <label for="mail">E-Mail: </label>
             <input type="email" class="input-bar" name="mail" id="mail" placeholder="Escribí tu e-mail" required>
-          </div>                
+          </div>     
           <div class="item-sub2">
             <label for="celular">Celular / Teléfono: </label>
             <input type="tel" class="input-bar" name="celular" id="celular" placeholder="Escribí tu celular o teléfono" required>
@@ -56,6 +73,20 @@
         </div>
 
         <div class="form-sub3">
+          <label for="direccion">Dirección de entrega</label>
+          <input type="text" class="input-bar" name="direccion" id="direccion" placeholder="Escribí donde entregaremos el pedido">
+        </div>
+
+        <div class="form-sub5">
+          <label for="opcionpago">Elija su metedo de pago:</label>
+          <div class="item-sub5">
+            <div class="opcion-pago"><input type="radio" name="opcionpago" id="op-efectivo" value="Efectivo">Efectivo</div>
+            <div class="opcion-pago"><input type="radio" name="opcionpago" id="op-transferencia" value="Transferencia">Transferencia</div>
+            <div class="opcion-pago"><input type="radio" name="opcionpago" id="op-mercadopago" value="MercadoPago">MercadoPago</div>    
+          </div>
+        </div>
+
+        <div class="form-sub4">
             <label for="comentario">Notas: </label>
             <textarea name="comentario" class="input-bar" id="comentario" placeholder="Si tenes un requerimiento especial para tu pedido hacenoslo saber acá..."></textarea>
         </div>
@@ -65,7 +96,7 @@
         </div>
     </form>
 
-    <div class="recibo-envio" id="recibo-envio"></div>
+    <!-- <div class="recibo-envio" id="recibo-envio"></div> -->
 
 
 <!-- TOASTIFY -->

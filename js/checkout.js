@@ -1,27 +1,22 @@
 const resumenPedido = document.getElementById("resumen-pedido")
+const tablaProductos = document.getElementById("tabla")
+const costoCompra = document.getElementById("costo-compra")
 
 let carrito = JSON.parse(localStorage.getItem("carrito"))
+const total = carrito.reduce((acc, el) => acc + el.precio * el.cantidad, 0)
 
 carrito.forEach((product) =>{
-    let tablaPedidos = document.createElement ("div")
-    tablaPedidos.className = "tabla-container"
+    let tablaPedidos = document.createElement ("tbody")
+    tablaPedidos.className = "tabla-pedido"
     tablaPedidos.innerHTML = `
-        <table>
-            <tr>
-                <td>Nombre del producto</td>
-                <td>Precio por unidad</td>
-                <td>Cantidad de unidades</td>
-                <td>Total</td>
-            </tr>
-            <tr>
-                <td>${product.nombre}</td>
-                <td>${product.precio}</td>
-                <td>${product.cantidad}</td>
-                <td>${product.cantidad * product.precio}</td>
-            </tr>
-        </table>
-
+                <tr>
+                    <td>${product.nombre}</td>
+                    <td>$${product.precio}</td>
+                    <td>${product.cantidad}</td>
+                    <td>$${product.cantidad * product.precio}</td>
+                </tr>
     `
-    resumenPedido.append(tablaPedidos)
+    tablaProductos.append(tablaPedidos)
 })
 
+costoCompra.innerHTML = `El total de su compra es: $${total}`
