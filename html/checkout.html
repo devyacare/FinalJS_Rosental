@@ -9,10 +9,6 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <!-- JS -->
     <script defer src="../js/checkout.js"></script>
-    <!-- <script defer src="../js/products.js"></script>   
-    <script defer src="../js/index.js"></script> 
-    <script defer src="../js/carrito.js"></script>-->
-
     <link rel="shortcut icon" href="../assets/logo.png" type="image/x-icon">
     <title>Econargui Shop Checkout</title>
 </head>
@@ -24,7 +20,7 @@
         <a href="../index.html">VOLVER AL INICIO</a>       
     </header>
 
-    <section class="info">
+    <section class="info" id="info">
         <p>Estos son los productos que elegiste. Más abajo te vamos a pedir algunos datos para el envío.</p>
     </section>
 
@@ -48,7 +44,7 @@
       </table>
     </div>
 
-    <form class="form-container">
+    <form class="form-container" id="form-container">
 
         <div class="form-sub1">
           <div class="item-sub1">
@@ -68,7 +64,7 @@
           </div>     
           <div class="item-sub2">
             <label for="celular">Celular / Teléfono: </label>
-            <input type="tel" class="input-bar" name="celular" id="celular" placeholder="Escribí tu celular o teléfono" required>
+            <input type="number" class="input-bar" name="celular" id="celular"  placeholder="Escribí tu celular o teléfono" required>
           </div>
         </div>
 
@@ -92,14 +88,13 @@
         </div>
 
         <div class="form-button">
-          <input type="submit" value="CONFIRMAR PEDIDO">
+          <input type="button"  id="confirmar" value="CONFIRMAR PEDIDO">
         </div>
     </form>
 
-    <!-- <div class="recibo-envio" id="recibo-envio"></div> -->
-
-
 <!-- TOASTIFY -->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<!-- SWEETALERT -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>

@@ -69,7 +69,7 @@ td, th{
 
 .form-container {
     color: white;
-    background: rgba(27, 31, 34, 0.8);
+    /* background: rgba(27, 31, 34, 0.8); */
     width: 850px;
     margin: 20px auto;
     max-width: 97%;
@@ -121,6 +121,7 @@ td, th{
     font-family: 'Montserrat', sans-serif;
     font-size: 1.2rem;
   }
+
   .form-container .form-sub1 .item-sub1 input:focus, .form-container .form-sub2 .item-sub1 input:focus, .form-container .form-sub2 .item-sub2 input:focus {
     background: rgba(255, 255, 255, 0.075);
   }
