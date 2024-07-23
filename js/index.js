@@ -35,7 +35,7 @@ fetch("./db/data.JSON")
                     Toastify({
                         text: "Este producto ya fue agregado. Si desea agregar cantidades vaya al Carrito",
                         className: "info",
-                        duration: 3000,
+                        duration: 2700,
                         style: {
                         background: "linear-gradient(to right, #b0003f, #c93d7b)",
                         }
