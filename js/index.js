@@ -65,12 +65,13 @@ fetch("./db/data.JSON")
         })
     })
     } catch (err){
-        Swal.fire({
-            icon: "error",
-            title: "Oops...",
-            text: "Algo salió mal",
-            footer: '<p>Si queres realizar tu pedido comunicate a nuestro Whatsapp: 343-111222</p>'
-          });
+        console.log("error")
+        // Swal.fire({
+        //     icon: "error",
+        //     title: "Oops...",
+        //     text: "Algo salió mal",
+        //     footer: '<p>Si queres realizar tu pedido comunicate a nuestro Whatsapp: 343-111222</p>'
+        //   });
     }
 })
 
