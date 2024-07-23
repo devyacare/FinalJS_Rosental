@@ -8,6 +8,7 @@ let carrito = JSON.parse(localStorage.getItem("carrito")) || []
 fetch("./db/data.JSON")
 .then(response => response.json())
 .then(data => {
+    try{
     data.forEach ((product) => {
         let content = document.createElement("div")
         content.className = "card"
@@ -63,6 +64,14 @@ fetch("./db/data.JSON")
         saveLocal()
         })
     })
+    } catch (err){
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Algo salió mal",
+            footer: '<p>Si queres realizar tu pedido comunicate a nuestro Whatsapp: 343-111222</p>'
+          });
+    }
 })
 
 const saveLocal = () =>{
