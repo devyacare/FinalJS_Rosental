@@ -256,3 +256,6 @@ header{
         color: #57cc88
 }
 
+.swal2-footer p {
+    color: #000000 !important;
+  }
