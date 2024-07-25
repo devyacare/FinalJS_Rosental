@@ -5,6 +5,7 @@ const confirmarPedido = document.getElementById("confirmar")
 const sectionInfo = document.getElementById("info")
 const formContainer = document.getElementById("form-container")
 
+
 let carrito = JSON.parse(localStorage.getItem("carrito"))
 const total = carrito.reduce((acc, el) => acc + el.precio * el.cantidad, 0)
 
@@ -23,6 +24,9 @@ carrito.forEach((product) =>{
 })
 
 costoCompra.innerHTML = `El total de su compra es: $${total}`
+
+
+
 
 confirmarPedido.addEventListener ("click", () =>{
     Swal.fire({
@@ -43,10 +47,11 @@ confirmarPedido.addEventListener ("click", () =>{
           localStorage.clear()
           carrito.length = 0
           sectionInfo.innerHTML = ""
-          formContainer.innerHTML = ""
+          formContainer.innerHTML = ""         
           resumenPedido.innerHTML =`
           <p>Estamos procesando tu pedido y pronto nos comunicaremos con vos. GRACIAS POR TU COMPRA !</p>
           `
         }
     });
 })
+

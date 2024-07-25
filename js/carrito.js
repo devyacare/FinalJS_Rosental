@@ -112,10 +112,27 @@ const pintarCarrito = () =>{
 
     let vaciarCarrito = totalBuying.querySelector(".vaciar-carrito")
     vaciarCarrito.addEventListener ("click", () =>{
-        localStorage.clear()
-        carrito.length = 0
-        actualizarDom()
-        carritoCounter()
+        Swal.fire({
+            title: "Estás seguro?",
+            text: "Vas a perder todos los productos cargados en el carrito",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Sí, vaciar carrito!"
+          }).then((result) => {
+            if (result.isConfirmed) {
+              Swal.fire({
+                title: "Borrado!",
+                text: "Tu carrito está vacio.",
+                icon: "success"
+              });
+              localStorage.clear()
+              carrito.length = 0
+              actualizarDom()
+              carritoCounter()
+            }
+        });
     })
 
     let checkout = totalBuying.querySelector(".checkout")
